@@ -82,7 +82,7 @@ function App() {
           href="#info" // This will scroll the page to the bottom section
           style={infoStyle}
         >
-          Menu
+          
         </a>
         
       </header>
