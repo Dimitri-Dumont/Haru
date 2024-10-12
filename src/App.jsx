@@ -38,23 +38,31 @@ function App() {
     position: 'relative',
     top: '-450px'
   };
-  const infoStyle = {
-    color: '#000000',
-    fontFamily: 'Sawarabi Mincho, serif',  // This is your current font
-    fontSize: '18px',                      // Add font size
-    fontWeight: 'bold',                    // Optional: Adjust font weight
-    position: 'relative',
-    bottom: '-780px',
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',  // Stack items vertically (pin above text)
+    alignItems: 'center',     // Center the pin and text horizontally
+    justifyContent: 'center', // Center items within the container
+    marginTop: '1000px',        // Adjust this value to move the container down
   };
+  
   const mapPinStyle = {
     fontFamily: 'Sawarabi Mincho, serif',
-    position: 'absolute',        // Fixed position to make it stick to the bottom
-    bottom: '25px',           // Distance from the bottom of the screen
-    left: '50%',              // Center horizontally
-    transform: 'translateX(-50%)', // Adjusts for centering by moving it half of its width to the left
+    position: 'relative',
     zIndex: 5,
     cursor: 'pointer',
-    width: '100px',           // Size of the map pin image/icon
+    width: '300px',   // Increase this value to make the pin bigger
+    height: 'auto',   // Maintain the aspect ratio automatically based on the width
+    marginBottom: '10px',  // Space between the pin and the address
+  };
+  
+  const infoStyle = {
+    color: '#000000',
+    fontFamily: 'Sawarabi Mincho, serif',
+    fontSize: '25px',  // Adjust the font size if needed
+    textAlign: 'center',  // Center the text
+    opacity: '.8'
+
   };
   // Apply smooth scroll behavior to the whole document
   useEffect(() => {
@@ -84,29 +92,27 @@ function App() {
         >
           Menu
         </a>
-        <a
-          style={infoStyle}
-        >
-          Haru sushi, 7441 Girard Ave,
-           La Jolla, CA 92037
-        </a>
+       
         
       </header>
-      {/* Add Google Maps Pin Icon */}
-      <a 
-        href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037/@32.8398382,-117.3543808,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dc033810456245:0x31d77d003060e923!2m2!1d-117.272068!2d32.8398517?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D" // Replace with your Google Maps URL
-        target="_blank"
-        rel="noopener noreferrer"
-        style={mapPinStyle}
-      >
-
-      <img
-        src={GoogleMapsPin}
-        alt="Google Maps Pin"
-        style={{ width: '100%' }}  
-        />
-       
-      </a>
+      <div style={containerStyle}>
+  <a 
+    href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037/@32.8398382,-117.3543808,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dc033810456245:0x31d77d003060e923!2m2!1d-117.272068!2d32.8398517?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={mapPinStyle}
+  >
+    <img
+      src={GoogleMapsPin}
+      alt="Google Maps Pin"
+      style={{ width: '100px' }}  
+    />
+  </a>
+  
+  <a style={infoStyle}>
+    Haru sushi, 7441 Girard Ave, La Jolla, CA 92037
+  </a>
+</div>
     </div>
   );
 }
