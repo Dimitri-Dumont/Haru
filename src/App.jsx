@@ -5,6 +5,7 @@ import GoogleMapsPin from './pin.svg';
 function App() {
   // Inline styles
   const appStyle = {
+
     backgroundColor: '#282c34',
     textAlign: 'center',
     position: 'relative',
@@ -71,48 +72,37 @@ function App() {
 
   return (
     <div style={appStyle}>
-      <style>
-        {`
-          @keyframes App-logo-spin {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
-        `}
-      </style>
+    
 
-      <header style={headerStyle}>
-        <p></p>
-        <a
-          href="#menu" // This will scroll the page to the bottom section
-          style={linkStyle}
-        >
-          Menu
-        </a>
-       
-        
-      </header>
-      <div style={containerStyle}>
-  <a 
-    href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037/@32.8398382,-117.3543808,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dc033810456245:0x31d77d003060e923!2m2!1d-117.272068!2d32.8398517?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={mapPinStyle}
-  >
-    <img
-      src={GoogleMapsPin}
-      alt="Google Maps Pin"
-      style={{ width: '100px' }}  
-    />
-  </a>
-  
-  <a style={infoStyle}>
-    Haru sushi, 7441 Girard Ave, La Jolla, CA 92037
-  </a>
-</div>
+              <header style={headerStyle}>
+                <p></p>
+                <a
+                  href="#menu" // This will scroll the page to the bottom section
+                  style={linkStyle}
+                >
+                  Menu
+                </a>
+              
+                
+              </header>
+          <div style={containerStyle}>
+          <a 
+            href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037/@32.8398382,-117.3543808,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dc033810456245:0x31d77d003060e923!2m2!1d-117.272068!2d32.8398517?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={mapPinStyle}
+          >
+            <img
+              src={GoogleMapsPin}
+              alt="Google Maps Pin"
+              style={{ width: '100px' }}  
+            />
+          </a>
+          
+          <a style={infoStyle}>
+            Haru sushi, 7441 Girard Ave, La Jolla, CA 92037
+          </a>
+        </div>
     </div>
   );
 }
