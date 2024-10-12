@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import back from './back2.png'
+import back from './back3.png'
+import GoogleMapsPin from './pin.svg';
 
 function App() {
   // Inline styles
@@ -25,8 +26,9 @@ function App() {
     justifyContent: 'center',
     fontSize: 'calc(10px + 2vmin)',
     color: 'white',
-    position: 'relative',
+    position: 'absolute',
     zIndex: 3, // Ensures the header text is on top of everything
+    bottom: '200px',           // Distance from the bottom of the screen
 
   };
 
@@ -37,18 +39,22 @@ function App() {
     top: '-450px'
   };
   const infoStyle = {
-    color: '#633c14',
-    fontFamily: 'Sawarabi Mincho, serif',
+    color: '#000000',
+    fontFamily: 'Sawarabi Mincho, serif',  // This is your current font
+    fontSize: '18px',                      // Add font size
+    fontWeight: 'bold',                    // Optional: Adjust font weight
     position: 'relative',
-    top: '-450px'
+    bottom: '-780px',
   };
   const mapPinStyle = {
-    position: 'absolute',
-    bottom: '80px', // Adjust this value to position the icon
-    right: '650px',  // Adjust this value to position the icon
+    fontFamily: 'Sawarabi Mincho, serif',
+    position: 'absolute',        // Fixed position to make it stick to the bottom
+    bottom: '25px',           // Distance from the bottom of the screen
+    left: '50%',              // Center horizontally
+    transform: 'translateX(-50%)', // Adjusts for centering by moving it half of its width to the left
     zIndex: 5,
     cursor: 'pointer',
-    width: '40px', // Size of the map pin image/icon
+    width: '100px',           // Size of the map pin image/icon
   };
   // Apply smooth scroll behavior to the whole document
   useEffect(() => {
@@ -79,10 +85,10 @@ function App() {
           Menu
         </a>
         <a
-          href="#info" // This will scroll the page to the bottom section
           style={infoStyle}
         >
-          
+          Haru sushi, 7441 Girard Ave,
+           La Jolla, CA 92037
         </a>
         
       </header>
@@ -92,13 +98,14 @@ function App() {
         target="_blank"
         rel="noopener noreferrer"
         style={mapPinStyle}
-        
       >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Map_pin_icon.svg" // URL to a pin image or use a local file
-          alt="Google Maps Pin"
-          style={{ width: '100%' }} // This controls the size of the pin
+
+      <img
+        src={GoogleMapsPin}
+        alt="Google Maps Pin"
+        style={{ width: '100%' }}  
         />
+       
       </a>
     </div>
   );

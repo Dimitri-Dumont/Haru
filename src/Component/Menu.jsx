@@ -1,5 +1,5 @@
 import React from 'react';
-import menuPDF from '../menu.pdf'; // Import your PDF file
+import menuPDF from '../menu2.pdf'; // Import your PDF file
 import bam from '../back.png'
 const ScrollMenu = () => {
   return (
@@ -42,7 +42,6 @@ const iframeStyle = {
   width: '100%', // Full width of the parent container
   height: '1000px', // Set the height to a larger value
   backgroundImage: `url(${bam})`, // Use the imported image
-
 };
 
 export default ScrollMenu;
