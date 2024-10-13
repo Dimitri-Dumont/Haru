@@ -18,34 +18,31 @@ function App() {
     backgroundPosition: 'center', /* Centers the image horizontally and vertically */
     backgroundSize: 'cover'
   };
-
-  const headerStyle = {
-    minHeight: '100vh',
+  
+  const containerStyle = {
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 'calc(10px + 2vmin)',
-    color: 'white',
-    position: 'absolute',
-    zIndex: 3, // Ensures the header text is on top of everything
-    bottom: '200px',           // Distance from the bottom of the screen
-
+    flexDirection: 'column',   // Stack items vertically
+    alignItems: 'center',       // Center items horizontally
+    justifyContent: 'center',   // Center items within the container
+    position: 'absolute',       // Position relative to the nearest parent with `relative`
+    bottom: '20px',             // 20px from the bottom of the screen
+    left: '50%',                // Move to the horizontal center
+    transform: 'translateX(-50%)', // Ensure perfect horizontal centering
+    zIndex: 10,                 // Keep the container above other elements
+    width: '100%',              // Optional: Adjust to fit the content properly
+    maxWidth: '600px',          // Optional: Prevent the container from becoming too wide
   };
-
   const linkStyle = {
     color: '#633c14',
     fontFamily: 'Sawarabi Mincho, serif',
-    position: 'relative',
-    top: '-450px'
+    fontSize: '40px',     // Adjust the font size as needed
+    position: 'absolute',  // Position relative to the nearest positioned ancestor
+    top: '20px',           // Distance from the top of the page
+    left: '50%',           // Center horizontally
+    transform: 'translateX(-50%)', // Adjust for perfect horizontal centering
+    zIndex: 10,            // Ensure it stays on top of other elements
   };
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',  // Stack items vertically (pin above text)
-    alignItems: 'center',     // Center the pin and text horizontally
-    justifyContent: 'center', // Center items within the container
-    marginTop: '1000px',        // Adjust this value to move the container down
-  };
+  
   
   const mapPinStyle = {
     fontFamily: 'Sawarabi Mincho, serif',
@@ -60,10 +57,16 @@ function App() {
   const infoStyle = {
     color: '#000000',
     fontFamily: 'Sawarabi Mincho, serif',
-    fontSize: '25px',  // Adjust the font size if needed
-    textAlign: 'center',  // Center the text
-    opacity: '.8'
-
+    fontSize: '14',
+    textAlign: 'center',  // Align text to center within the element
+    opacity: '.5',
+    display: 'flex',       // Use flex for alignment within the element
+    justifyContent: 'center', // Center text horizontally inside the element
+    position: 'absolute',  // Position relative to the nearest relative parent
+    bottom: '120px',        // 20px from the bottom of the screen
+    left: '50%',           // Move to the center of the screen horizontally
+    transform: 'translateX(-50%)', // Ensure perfect centering
+    zIndex: 10,            // Ensure it stays on top of other content
   };
   // Apply smooth scroll behavior to the whole document
   useEffect(() => {
@@ -72,38 +75,31 @@ function App() {
 
   return (
     <div style={appStyle}>
-    
-
-              <header style={headerStyle}>
-                <p></p>
-                <a
-                  href="#menu" // This will scroll the page to the bottom section
-                  style={linkStyle}
-                >
-                  Menu
-                </a>
-              
-                
-              </header>
-          <div style={containerStyle}>
-          <a 
-            href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037/@32.8398382,-117.3543808,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dc033810456245:0x31d77d003060e923!2m2!1d-117.272068!2d32.8398517?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={mapPinStyle}
-          >
-            <img
-              src={GoogleMapsPin}
-              alt="Google Maps Pin"
-              style={{ width: '100px' }}  
-            />
-          </a>
-          
-          <a style={infoStyle}>
-            Haru sushi, 7441 Girard Ave, La Jolla, CA 92037
-          </a>
-        </div>
+      <a href="#menu" style={linkStyle}>
+        Menu
+      </a>
+  
+    <div style={containerStyle}>
+      <a 
+        href="https://www.google.com/maps/dir//7441+Girard+Ave,+La+Jolla,+CA+92037"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={mapPinStyle}
+      >
+        <img
+          src={GoogleMapsPin}
+          alt="Google Maps Pin"
+          style={{ width: '100px' }}  
+        />
+      </a>
+  
+      <a style={infoStyle}>
+        (858) 246-6150 <br />
+        Haru Sushi, 7441 Girard Ave,<br />
+        La Jolla, CA 92037
+      </a>
     </div>
+  </div>
   );
 }
 
