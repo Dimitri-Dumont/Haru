@@ -25,7 +25,7 @@ function App() {
     alignItems: 'center',       // Center items horizontally
     justifyContent: 'center',   // Center items within the container
     position: 'absolute',       // Position relative to the nearest parent with `relative`
-    bottom: '20px',             // 20px from the bottom of the screen
+    bottom: '1px',             // 20px from the bottom of the screen
     left: '50%',                // Move to the horizontal center
     transform: 'translateX(-50%)', // Ensure perfect horizontal centering
     zIndex: 10,                 // Keep the container above other elements
