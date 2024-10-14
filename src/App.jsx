@@ -57,7 +57,7 @@ function App() {
   const infoStyle = {
     color: '#000000',
     fontFamily: 'Sawarabi Mincho, serif',
-    fontSize: '30px',
+    fontSize: '25px',
     textAlign: 'center',  // Align text to center within the element
     opacity: '.5',
     display: 'flex',       // Use flex for alignment within the element
@@ -72,7 +72,7 @@ function App() {
   const infoStyle2 = {
     color: '#000000',
     fontFamily: 'Sawarabi Mincho, serif',
-    fontSize: '30px',
+    fontSize: '25px',
     textAlign: 'center',  // Align text to center within the element
     opacity: '.5',
     display: 'flex',       // Use flex for alignment within the element
