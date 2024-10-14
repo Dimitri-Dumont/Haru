@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import back from './back3.png'
+import back from './back4.png'
 import GoogleMapsPin from './pin.svg';
 
 function App() {
@@ -57,13 +57,28 @@ function App() {
   const infoStyle = {
     color: '#000000',
     fontFamily: 'Sawarabi Mincho, serif',
-    fontSize: '14',
+    fontSize: '30px',
     textAlign: 'center',  // Align text to center within the element
     opacity: '.5',
     display: 'flex',       // Use flex for alignment within the element
     justifyContent: 'center', // Center text horizontally inside the element
     position: 'absolute',  // Position relative to the nearest relative parent
     bottom: '120px',        // 20px from the bottom of the screen
+    left: '50%',           // Move to the center of the screen horizontally
+    transform: 'translateX(-50%)', // Ensure perfect centering
+    zIndex: 10,            // Ensure it stays on top of other content
+  };
+
+  const infoStyle2 = {
+    color: '#000000',
+    fontFamily: 'Sawarabi Mincho, serif',
+    fontSize: '30px',
+    textAlign: 'center',  // Align text to center within the element
+    opacity: '.5',
+    display: 'flex',       // Use flex for alignment within the element
+    justifyContent: 'center', // Center text horizontally inside the element
+    position: 'absolute',  // Position relative to the nearest relative parent
+    bottom: '225px',        // 20px from the bottom of the screen
     left: '50%',           // Move to the center of the screen horizontally
     transform: 'translateX(-50%)', // Ensure perfect centering
     zIndex: 10,            // Ensure it stays on top of other content
@@ -92,10 +107,14 @@ function App() {
           style={{ width: '100px' }}  
         />
       </a>
-  
+      <a style={infoStyle2}>
+        (858) 246-6150 <br /><br />
+        Wednesday - Sunday    <br/>  5 - 9 pm
+        <br />
+      </a>
       <a style={infoStyle}>
-        (858) 246-6150 <br />
-        Haru Sushi, 7441 Girard Ave,<br />
+      <br />
+        7441 Girard Ave,<br />
         La Jolla, CA 92037
       </a>
     </div>
